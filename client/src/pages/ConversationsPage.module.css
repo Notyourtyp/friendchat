@@ -1,0 +1,176 @@
+/* client/src/pages/ConversationsPage.module.css */
+
+.page {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ── Left pane ─────────────────────────────────────────────────────────────── */
+
+.listPane {
+  width: 300px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.listHeader {
+  padding: 20px 18px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listTitle {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.listHint {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.noFriends {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.noFriends span {
+  font-size: 36px;
+  margin-bottom: 4px;
+}
+
+/* Override CometChat UI Kit to match our dark theme */
+:global(.cc-conversations) {
+  background: var(--surface) !important;
+  height: 100% !important;
+}
+
+:global(.cc-conversations__list-item) {
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* ── Right pane ────────────────────────────────────────────────────────────── */
+
+.messagePane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 52px;
+  opacity: 0.4;
+}
+
+.placeholderText {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.placeholderSub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Friends list ──────────────────────────────────────────────────────────── */
+
+.friendsList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.friendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.friendItem:hover {
+  background: var(--surface-2);
+}
+
+.friendItemActive {
+  background: var(--accent-dim);
+  border-left: 3px solid var(--accent);
+}
+
+.friendAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--surface-2);
+}
+
+.friendInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.friendName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.friendSub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chatArrow {
+  font-size: 20px;
+  color: var(--text-muted);
+}
